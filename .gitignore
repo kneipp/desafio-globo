@@ -2,3 +2,5 @@
 __pycache__
 .python-version
 movie_data.json
+staticfiles
+db.sqlite3

@@ -1,3 +1,4 @@
+import json
 import re
 import sys
 
@@ -8,13 +9,13 @@ date_re = re.compile(r"[0-9]{2}-[0-9]{2}-[0-9]{4}")
 
 
 def normalize_date(date_str: str) -> datetime:
-    return datetime.strptime(date_str, "%d-%m-%Y").date()
+    return datetime.strptime(date_str, "%d-%m-%Y").date().strftime("%d/%m/%Y")
 
 
 def normalize_size(size_str: str) -> str:
     gb = int(size_str) / 1024 / 1024 / 1024
     if gb < 1:
-        return f"{gb:.2f}GB".replace('.', ',')
+        return f"{gb:.2f}GB".replace(".", ",")
     return f"{int(gb)}GB"
 
 
@@ -43,8 +44,8 @@ def parse_data_from_blob(blob: str) -> Generator[list, None, None]:
 
 
 def output_to_json(movie_data: list) -> None:
-    print(movie_data)
-    pass
+    with open("movie_data.json", "w") as output_f:
+        json.dump(movie_data, output_f)
 
 
 def main() -> None:

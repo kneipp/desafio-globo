@@ -19,6 +19,7 @@
     "react-router-hash-link": "^2.3.1",
     "react-scripts": "3.4.1",
     "react-spinners": "^0.8.3",
+    "serve": "^11.3.2",
     "source-map-explorer": "^2.4.2",
     "styled-components": "^5.1.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
@@ -31,7 +32,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "analyze": "source-map-explorer build/static/js/main.*"
+    "analyze": "source-map-explorer build/static/js/main.*",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"

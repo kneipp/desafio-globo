@@ -6,7 +6,7 @@ import { APIGet } from 'services/API'
 
 export default function Home() {
   const [ movies, setMovies ] = useState(undefined)
-  const [ filters, setFilters ] = useState({})
+  const [ filters, setFilters ] = useState(undefined)
 
   const getMovies = function(appliedFilters) {
     setMovies(undefined)
@@ -22,9 +22,13 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
+    if (filters === undefined) {
+      return
+    }
+
     const debounce = setTimeout(() => {
       getMovies(filters)
-    }, 1000);
+    }, 500);
     return () => clearTimeout(debounce);
   }, [filters])
 

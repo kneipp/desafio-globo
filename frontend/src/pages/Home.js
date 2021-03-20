@@ -85,20 +85,6 @@ export default function Home() {
 
   const MoviesComponent = useCallback(() =>
     <>
-    <div className="mt-4">
-      <label for="freetext" className="block text-sm font-medium text-gray-700">Filter by name or description</label>
-      <input type="text" onChange={e => setFilters({...filters, freetext: e.target.value})} name="freetext" id="freetext" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></input>
-    </div>
-    <div className="mt-4 flex flex-row">
-      <div className="flex-1 pr-2">
-        <label for="director" className="block text-sm font-medium text-gray-700">Filter by director</label>
-        <input type="text" onChange={e => setFilters({...filters, director: e.target.value})} name="director" id="director" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></input>
-      </div>
-      <div className="flex-1 pl-2">
-        <label for="year" className="block text-sm font-medium text-gray-700">Filter by year</label>
-        <input type="text" onChange={e => setFilters({...filters, year: e.target.value})} name="year" id="freetext_filter" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></input>
-      </div>
-    </div>
     <div className="mt-8 flex flex-col">
       {movies === undefined ?
         <PulseLoader color="gray" size={10} />
@@ -153,6 +139,24 @@ export default function Home() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
+        {!activeMovie &&
+          <>
+          <div className="mt-4">
+            <label for="freetext" className="block text-sm font-medium text-gray-700">Filter by name or description</label>
+            <input type="text" onChange={e => setFilters({...filters, freetext: e.target.value})} name="freetext" id="freetext" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></input>
+          </div>
+          <div className="mt-4 flex flex-row">
+            <div className="flex-1 pr-2">
+              <label for="director" className="block text-sm font-medium text-gray-700">Filter by director</label>
+              <input type="text" onChange={e => setFilters({...filters, director: e.target.value})} name="director" id="director" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></input>
+            </div>
+            <div className="flex-1 pl-2">
+              <label for="year" className="block text-sm font-medium text-gray-700">Filter by year</label>
+              <input type="text" onChange={e => setFilters({...filters, year: e.target.value})} name="year" id="freetext_filter" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></input>
+            </div>
+          </div>
+          </>
+        }
         {activeMovie ?
           <MovieComponent />
         :

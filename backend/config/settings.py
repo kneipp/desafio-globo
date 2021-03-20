@@ -25,11 +25,13 @@ INTERNAL_APPS = [
 EXTERNAL_APPS = [
     "rest_framework",
     "drf_yasg",
+    "corsheaders",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + INTERNAL_APPS + EXTERNAL_APPS
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -93,4 +95,6 @@ STATIC_ROOT = BASE_DIR.joinpath("staticfiles")
 STATICFILES_DIRS = []
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-MOVIES_API_BASE_URL = 'https://ghibliapi.herokuapp.com'
+MOVIES_API_BASE_URL = "https://ghibliapi.herokuapp.com"
+
+CORS_ORIGIN_ALLOW_ALL = True

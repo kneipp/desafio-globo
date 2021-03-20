@@ -7,4 +7,8 @@ class PersonSerializer(serializers.Serializer):
 
 class MovieSerializer(serializers.Serializer):
     title = serializers.CharField()
+    director = serializers.CharField()
+    description = serializers.CharField()
     people = PersonSerializer(many=True)
+    release_date = serializers.IntegerField()
+    rt_score = serializers.IntegerField()

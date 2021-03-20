@@ -50,4 +50,17 @@ def get_movies_and_people() -> list:
 
 
 def filter_movies_by(movies, filters: dict) -> list:
-    return movies
+    if freetext := filters.get("freetext"):
+        freetext = freetext.lower()
+        movies = filter(
+            lambda movie: freetext in movie["title"].lower()
+            or freetext in movie["description"].lower(),
+            movies,
+        )
+    if director := filters.get("director"):
+        director = director.lower()
+        movies = filter(lambda movie: director in movie["director"].lower(), movies)
+    if year := filters.get("year"):
+        year = year.lower()
+        movies = filter(lambda movie: year in movie["release_date"].lower(), movies)
+    return list(movies)

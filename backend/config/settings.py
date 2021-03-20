@@ -6,7 +6,7 @@ SECRET_KEY = "i%9r_pl@kynny7ib(u7+&8=1xh6t4zga)tc17u=!#=ocmw_f+b"
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["kneipp-movies-api.herokuapp.com"]
 
 DJANGO_APPS = [
     "django.contrib.auth",

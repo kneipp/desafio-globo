@@ -1,8 +1,10 @@
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = "i%9r_pl@kynny7ib(u7+&8=1xh6t4zga)tc17u=!#=ocmw_f+b"
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 DEBUG = True
 

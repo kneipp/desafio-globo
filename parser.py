@@ -1,3 +1,27 @@
+"""Spreadsheet Parser to JSON
+
+This script allows the user to make json file from the planilha.txt 
+or similar spreadsheet file given by user.
+
+Usage: 
+
+    python parser.py 
+
+or
+
+    python parser.py /path/to/spreadsheet.txt
+
+This script was tested with Python 3.9
+
+This file contains the following functions:
+
+    * normalize_date - returns date in dd/mm/yyyy format
+    * normalize_size - converts size from bytes and returns into gigabytes
+    * parse_data_from_blob - parses lines of spreadsheet
+    * output_to_json - saves json data into movie_data.json file
+    * main - the main function of the script
+"""
+
 import json
 import re
 import sys

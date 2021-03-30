@@ -1,30 +1,28 @@
-# Desafio Globo
+# Globo Code Challenge
 
-## Especificações do Projeto
+## First task - Spreadsheet Parser to JSON
 
-Descrição dos [requisitos do projeto](requisitos-do-projeto.pdf).
+The Python script [parser.py](parser.py) handles data in the [planilha.txt](planilha.txt) than create a new file.
+Output sample: [movie_data.example.json](movie_data.example.json)
 
-## Primeira tarefa - Spreadsheet Parser to JSON
-
-Para primeira tarefa foi utilizado Python 3.9 na criação do Script [parser.py](parser.py) que processa os dados da [planilha.txt](planilha.txt) e cria um novo arquivo JSON de acordo com as especificações do projeto.
-Exemplo de output: [movie_data.example.json](movie_data.example.json)
-
-Utilização:
+Usage:
 
 ```sh
 python parser.py
 ```
 
-ou 
+## Second task - Frontend and Backend Web App connected to Ghibli Studio API
 
-```sh
-python parser.py planilha.txt
-```
+Secont task is divided in two independent applications. 
 
-## Segunda tarefa - Desenvolvimento web
+Frontend app has been made using React. React is a JavaScript framework for developing SPAs (single-page applications). It has solid documentation and a vibrant ecosystem around it.
 
-Foram criadas duas aplicações utilizando as tecnologias Django Framework para o backend e React no frontend.
+Backend app was built with Django Framework. Django is a Python web framework that simplifies common practices in web development.
 
-A solução está disponível [aqui](http://kneipp-movies-frontend.herokuapp.com/).
+The purpose of the project is to communicate with the API of the Ghibli Studios, retrieve and display the processed data in the Frontend.
+
+The solution is avaible and deployed via Heroku, and can be accessed [here](http://kneipp-movies-frontend.herokuapp.com/).
 
 <a href="https://raw.githubusercontent.com/kneipp/desafio-globo/master/screenshot.gif" target="_blank"><img src="screenshot.gif" width="1024" /></a>
+
+Challenge requirements can be accessed [here] (requisitos-do-projeto.pdf) (in Portuguese).

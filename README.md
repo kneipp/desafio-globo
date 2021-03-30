@@ -2,8 +2,8 @@
 
 ## First task - Spreadsheet Parser to JSON
 
-The Python script [parser.py](parser.py) handles data in the [planilha.txt](planilha.txt) than create a new file.
-Output sample: [movie_data.example.json](movie_data.example.json)
+The Python script [parser.py](parser/parser.py) handles data in the [planilha.txt](parser/planilha.txt) than create a new file.
+Output sample: [movie_data.example.json](parser/movie_data.example.json)
 
 Usage:
 

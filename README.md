@@ -25,4 +25,4 @@ The solution is avaible and deployed via Heroku, and can be accessed [here](http
 
 <a href="https://raw.githubusercontent.com/kneipp/desafio-globo/master/screenshot.gif" target="_blank"><img src="screenshot.gif" width="1024" /></a>
 
-Challenge requirements can be accessed [here] (requisitos-do-projeto.pdf) (in Portuguese).
+Challenge requirements can be accessed [here](requisitos-do-projeto.pdf) (in Portuguese).
